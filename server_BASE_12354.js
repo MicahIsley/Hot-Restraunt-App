@@ -32,24 +32,10 @@ app.get('/reserve', (req, res) => {
 
 });
 
-<<<<<<< HEAD
-app.get('/tables', (req, res) => { 
-=======
-app.get('/api/tables', (req, res) => {
-    res.json(reservations);
-
-});
-
-app.get('/api/waitingList', (req, res) => {
-    res.json(waitingList);
-});
-
 app.get('/tables', (req, res) => {
->>>>>>> a8bed32ac977786c78bc0e38b8627cbb4ae60454
     res.sendFile(__dirname + '/tables.html');
 
 });
-
 
 app.post('/reserve', (req,res) => {
     //so you've received a request to make a reservation
