@@ -1,0 +1,28 @@
+#mainHeading {
+	text-align: center;
+}
+
+.glyphicon {
+	margin-right: 10px;
+}
+
+.description {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#reservationForm {
+	display: none;
+}
+
+#viewTablesPage {
+	display: none;
+}
+
+#reservationHeading {
+	display: none;
+}
+
+#viewTablesHeading {
+	display: none;
+}
