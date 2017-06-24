@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const MongoClient = require('mongodb').MongoClient;
 
 // Setting up Express App
 app.use(bodyParser.json());
@@ -17,9 +16,6 @@ app.use(bodyParser.json({
 var waitingList = [];
 var reservations = [];
 
-MongoClient.connect('link-to-db', (err, database) => {
-
-});
 
 // Routing
 app.listen(3000, function() {
