@@ -16,7 +16,10 @@ app.use(bodyParser.json({
 var waitingList = [];
 var reservations = [];
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1b20d6252d81653c970c27e2421c05df7e362c13
 // Routing
 app.listen(3000, function() {
     console.log('listening on 3000...');
@@ -46,13 +49,13 @@ app.post('/reserve', (req,res) => {
 
     console.log(newTable);
 
-    if(reservation.length >= 5) {
+    if(reservations.length >= 5) {
         waitingList.push(newTable);
+        res.text("Reservation received, on waiting list");
     } else {
         reservations.push(newTable);
+        res.text("Reservation received, you have a table!");
     }
-
-    res.json(newTable);
 
 });
 
