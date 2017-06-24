@@ -46,8 +46,17 @@ app.post('/reserve', (req,res) => {
     //so you've received a request to make a reservation
     //Fields Name, Phone Number, Email, Unique ID
 
+    var newTable = req.body;
 
+    console.log(newTable);
 
+    if(reservation.length >= 5) {
+        waitingList.push(newTable);
+    } else {
+        reservations.push(newTable);
+    }
+
+    res.json(newTable);
 
 });
 
