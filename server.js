@@ -45,7 +45,7 @@ app.post('/reserve', (req,res) => {
 
     console.log(newTable);
 
-    if(reservation.length >= 5) {
+    if(reservations.length >= 5) {
         waitingList.push(newTable);
     } else {
         reservations.push(newTable);
