@@ -3,15 +3,28 @@ const app = express();
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 
+// Setting up Express App
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.text());
+app.use(bodyParser.json({
+    type: "application/vnd.api+json"
+}));
+
+// Array for waiting list, and reserved tables
+var waitingList = [];
+var reservations = [];
+
 MongoClient.connect('link-to-db', (err, database) => {
 
 });
 
+// Routing
 app.listen(3000, function() {
     console.log('listening on 3000...');
 });
-
-// General form of GET request, app.get(path, callback)
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html'); //Go write index.html
@@ -34,3 +47,13 @@ app.post('/reserve', (req,res) => {
     //Fields Name, Phone Number, Email, Unique ID
 
 
+
+
+});
+
+function Table(name, phoneNumber, email, uniqueId) {
+    this.name = name;
+    this.phoneNumber = phoneNumber;
+    this.email = email;
+    this.uniqueId = uniqueId;
+};
