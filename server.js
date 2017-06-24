@@ -32,10 +32,11 @@ app.get('/reserve', (req, res) => {
 
 });
 
-app.get('/tables', (req, res) => {
+app.get('/tables', (req, res) => { 
     res.sendFile(__dirname + '/tables.html');
 
 });
+
 
 app.post('/reserve', (req,res) => {
     //so you've received a request to make a reservation

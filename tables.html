@@ -22,18 +22,36 @@
   					<div class="panel-heading">
     					<h3 class="panel-title">Current Reservations</h3>
   					</div>
-					  <div class="panel-body">
+					  <div class="panel-body" id="reservationId">
 					  </div>
 				</div>
 				<div class="panel panel-default">
   					<div class="panel-heading">
     					<h3 class="panel-title">Waiting List</h3>
   					</div>
-					  <div class="panel-body">
+					  <div class="panel-body" id="waitId">
 					  </div>
 				</div>
 			</div>	
 
 		</div>
 	</body>
+	<script type="text/javascript">
+		$.get("/api/tables", function(data) {
+			console.log(data);
+			if(data) {
+				for(var i =0; i < data.length; i++){
+					$("#reservationId").text(data.id);
+				}
+
+			}
+		})
+		$.get("api/waitinglist", function(data) {
+			console.log(data);
+			if(data) {
+				for(var i =0; i < data.length; i++){
+					$("#waitId").text(data.id);
+				}
+			}
+		})
 </html>				
