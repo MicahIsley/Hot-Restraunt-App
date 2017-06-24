@@ -32,6 +32,15 @@ app.get('/reserve', (req, res) => {
 
 });
 
+app.get('/api/tables', (req, res) => {
+    res.json(reservations);
+
+});
+
+app.get('/api/waitingList', (req, res) => {
+    res.json(waitingList);
+});
+
 app.get('/tables', (req, res) => {
     res.sendFile(__dirname + '/tables.html');
 
