@@ -26,25 +26,41 @@
 								<form>
 								  <div class="form-group">
 								    <label for="exampleInputName">Name</label>
-								    <input type="name" class="form-control" id="exampleInputName1" placeholder="Name">
+								    <input type="name" class="form-control" id="name" placeholder="Name">
 								  </div>
 								  <div class="form-group">
 								    <label for="exampleInputPassword1">Phone Number</label>
-								    <input type="phoneNumber" class="form-control" id="exampleInputPhoneNumber1" placeholder="Phone Number">
+								    <input type="phoneNumber" class="form-control" id="phoneNumber" placeholder="Phone Number">
 								  </div>
 								  <div class="form-group">
 								    <label for="exampleInputPassword1">Email</label>
-								    <input type="Email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+								    <input type="Email" class="form-control" id="email" placeholder="Email">
 								  </div>
 								  <div class="form-group">
 								    <label for="exampleInputPassword1">Unique ID</label>
-								    <input type="id" class="form-control" id="exampleInputId1" placeholder="Unique ID">
+								    <input type="id" class="form-control" id="id" placeholder="Unique ID">
 								  </div>
-								  <button type="submit" class="btn btn-primary">Submit</button>
+								  <button type="submit" class="btn btn-primary" id="submit">Submit</button>
 								</form>
 							</div>	
 						</div>	
 					</div>
 		</div>
 	</body>
+	<script type="text/javascript">
+		$("#submit").on("click", function(event) {
+			event.preventDefault();
+			var newReservation = {
+				name: $("#name").val().trim(),
+				phone: $("#phoneNumber").val().trim(),
+				email: $("#email").val().trim(),
+				id: $("#id").val().trim()
+			};
+
+			$.post("/reserve", newReservation)
+			.done(function(data) {
+				console.log(data);
+			})
+		})
+	</script>	
 </html>
